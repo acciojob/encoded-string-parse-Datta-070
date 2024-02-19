@@ -1,20 +1,18 @@
 const parseCode = (str) => {
   // your code here
-	const regex = /^(.*?)000(.*?)000(\d+)$/;
-  
-  // Use the regular expression to match the input string
-  const match = str.match(regex);
+	const parts = str.split('000');
 
-  if (match) {
-    // Extract the captured groups and create the result object
-    const [firstName, lastName, id] = match;
-    return { firstName, lastName, id };
-  } else {
-    // Return null or an appropriate value if the input doesn't match the expected format
-    return null;
-  }
+	const firstName = parts[0];
+	const lastName = parts[1];
+	const id = parts[2];
+
+	return {
+		firstName,
+		lastName,
+		id
+	};
 };
 
-// Do not change the code below
+// Do not change the code belo
 const str = prompt("Enter str: ");
 alert(JSON.stringify(parseCode(str)));
